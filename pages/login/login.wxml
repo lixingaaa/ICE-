@@ -1,0 +1,7 @@
+<view class="container">
+  <view class="logo">
+    机摩人配图
+  </view>
+  <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">微信手机号快捷登录</button>
+  <navigator class="otherLogin" url="../otherLogin/otherLogin" hover-class="none">其他手机号登录</navigator>
+</view>

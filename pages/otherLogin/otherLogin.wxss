@@ -1,0 +1,43 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  width: 300rpx;
+  height: 300rpx;
+  background: #dfdfdf;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 100rpx auto;
+}
+
+button {
+  margin-bottom: 30rpx;
+  width: 80%;
+}
+
+.login {
+  display: flex;
+  flex-direction: column;
+  width: 600rpx;
+}
+
+.login div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80rpx;
+  margin-bottom: 30rpx;
+}
+
+.login div button {
+  width: 150rpx;
+  height: 50rpx;
+  font-size: 24rpx;
+  margin: 0;
+  padding: 0;
+}

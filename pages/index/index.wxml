@@ -1,0 +1,128 @@
+<!--index.wxml-->
+<view class="container">
+  <!-- <view class="page-header">
+    <navigator url="../personal/personal" class="userinfo" hover-class="none" wx:if="{{hasUserInfo}}">
+      <view class="userinfo-name">{{userInfo.nickName}}</view>
+      <image src="{{userInfo.avatarUrl}}" class="userinfo-avatar"></image>
+    </navigator>
+    <button class="getUserInfo" wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo">请登录</button>
+    <scroll-view class="property" scroll-x scroll-with-animation="true">
+      <view wx:for="{{5}}">
+      </view>
+    </scroll-view>
+  </view> -->
+  <image class="head_bg" src="../../images/head_bg.jpg"></image>
+  <view class="user_info">
+    <view class="login" style="padding-top:{{isGT800 ? '200rpx':'160rpx'}}">
+      <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo" class="not_login_in">
+        <text>用户登录</text>
+        <image src="../../images/arrow.png"></image>
+      </button>
+      <view wx:else class="login_in">
+        <view class="userinfo">
+          <view class="user_name">HI , John</view>
+          <view class="user_head_portrait">
+            <!-- <image ></image> -->
+          </view>
+        </view>
+        <scroll-view class="user_fortune_list" scroll-x scroll-with-animation="true">
+          <view class="user_fortune balance">
+            <image class="bg" src="../../images/fortune_1.png"></image>
+            <view class="amount">
+              <text>￥</text>3.22</view>
+            <view class="type">
+              <text>余额</text>
+              <view class="recharge">充值</view>
+            </view>
+          </view>
+          <view class="user_fortune card_roll">
+            <image class="bg" src="../../images/fortune_2.png"></image>
+            <view class="amount">14</view>
+            <view class="type">
+              <text>我的卡卷</text>
+            </view>
+          </view>
+          <view class="user_fortune ice_cream">
+            <image class="bg" src="../../images/fortune_3.png"></image>
+            <view class="amount">3</view>
+            <view class="type">
+              <text>冰淇淋</text>
+            </view>
+          </view>
+          <view class="user_fortune integral">
+            <image class="bg" src="../../images/fortune_4.png"></image>
+            <view class="amount">234</view>
+            <view class="type">
+              <text>我的积分</text>
+            </view>
+          </view>
+        </scroll-view>
+      </view>
+    </view>
+
+  </view>
+
+  <!--轮播-->
+  <view class="carousel">
+    <swiper autoplay="true" circular="true" interval="3000" bindchange="getCurBanner" current="curBannerIndex">
+      <swiper-item wx:for="{{3}}">
+        <image src="../../images/banner.jpg" mode="widthFix"></image>
+      </swiper-item>
+    </swiper>
+    <view class="dots">
+      <view class="dot {{index == curBannerIndex ? 'active':''}}" wx:for="{{3}}"></view>
+    </view>
+  </view>
+
+  <!--活动-->
+  <view class="active_list">
+    <!--超值团购-->
+    <view class="group_buying active">
+      <view class="title">
+        <view class="big_title">超值团购</view>
+        <view class="small_title">聚划算</view>
+      </view>
+      <image src="../../images/group_buying.png"></image>
+    </view>
+    <!--游乐园-->
+    <view class="amusement_park active">
+      <view class="title">
+        <view class="big_title">游乐园</view>
+        <view class="small_title">玩游戏赢奖励</view>
+      </view>
+      <image src="../../images/amusement_park.png"></image>
+    </view>
+  </view>
+
+  <!--找机器-->
+  <view class="find_machine">
+    <view class="header">
+      <image class="title" src="../../images/title.png"></image>
+      <view class="more">
+        <text>更多机摩人</text>
+        <image src="../../images/arrow_h.png"></image>
+      </view>
+    </view>
+    <view class="route">
+      <image class="bg" src="../../images/map.png"></image>
+      <view class="nearby">
+        <view class="address">
+          <image class="addr" src="../../images/addr.png"></image>
+          <view>
+            <text>陶然亭居然之家</text>
+            <image src="../../images/arrow.png"></image>
+          </view>
+        </view>
+        <view class="distance">
+          <image src="../../images/route.png"></image>
+          <text>距您892m</text>
+        </view>
+      </view>
+    </view>
+    <!--扫码付-->
+    <view class="sweep_payment">
+      <image src="../../images/sweep_code.png"></image>
+      <text>扫码付</text>
+    </view>
+  </view>
+</view>

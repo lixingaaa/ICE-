@@ -1,0 +1,10 @@
+<canvas style="width:100%; height:100%" canvas-id="game" disable-scroll='true' bindtouchstart="touchstart" bindtouchmove="touchmove" bindtouchend="" bindtouchcancel="" bindlongtap="">
+  <cover-view class="integral">
+    <cover-view>积分:{{integral}}</cover-view>
+    <cover-view>时间:{{time}}</cover-view>
+  </cover-view>
+  <cover-view wx:if="{{time == 60}}" class="mask">
+    <cover-view>游戏结束</cover-view>
+    <cover-view bindtap="initialize">重新开始</cover-view>
+  </cover-view>
+</canvas>

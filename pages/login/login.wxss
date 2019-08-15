@@ -1,0 +1,22 @@
+.logo {
+  width: 300rpx;
+  height: 300rpx;
+  background: #dfdfdf;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 100rpx auto;
+}
+
+button {
+  margin-bottom: 30rpx;
+  width: 80%;
+}
+
+.otherLogin {
+  width: 80%;
+  height: 90rpx;
+  line-height: 90rpx;
+  margin: 0 auto;
+  text-align: center;
+}
