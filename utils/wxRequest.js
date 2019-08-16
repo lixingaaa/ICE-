@@ -1,4 +1,7 @@
 function wxPromise(method, url, data) {
+  wx.showLoading({
+    title: '',
+  })
   //返回一个Promise对象
   return new Promise(function (resolve, reject) {
     wx.request({
@@ -17,11 +20,11 @@ function wxPromise(method, url, data) {
         if (res.data.code == 200) {
           resolve(res);
         } else {
-          console.log(res)
+          reject(res);
           //如果出现异常则弹出dialog
           // wx.showModal({
           //   title: '提示',
-          //   content: res.data.errCode + '系统异常',
+          //   content: res.data.msg,
           //   confirmColor: '#118EDE',
           //   showCancel: false,
           //   success: function (res) {
@@ -40,7 +43,6 @@ function wxPromise(method, url, data) {
           icon: 'loading',
           duration: 2000
         })
-        reject(res);
       }
     });
   });

@@ -31,14 +31,14 @@ function getVfCodePromise(phone) {
 }
 
 // 创建会员账号
-function setUserMemberPromise(phone, userInfo, verificationCode) {
-  let createUserUrl = config.createUserMember;
+function phoneLoginPromise(phone, verificationCode, openId, ) {
+  let phoneLoginUrl = config.phoneLogin;
   let data = {
     "phone": phone,
-    "userInfo": userInfo,
+    "openId": openId,
     "verificationCode": verificationCode
   }
-  return wxRequest.wxPromise("POST", createUserMemberUrl, data);
+  return wxRequest.wxPromise("POST", phoneLoginUrl, data);
 }
 
 // 微信快捷注册
@@ -57,6 +57,6 @@ module.exports = {
   getUserInfoByCodePromise: getUserInfoByCodePromise,
   getEncryptionUserInfoPromise: getEncryptionUserInfoPromise,
   getVfCodePromise: getVfCodePromise,
-  setUserMemberPromise: setUserMemberPromise,
+  phoneLoginPromise: phoneLoginPromise,
   wxLoginPromise: wxLoginPromise
 }

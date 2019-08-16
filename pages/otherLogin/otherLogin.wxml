@@ -2,7 +2,7 @@
   <view class="logo">
     机摩人配图
   </view>
-  <form class="login">
+  <form class="login" bindsubmit="loginIn">
     <div>
       <input placeholder="输入手机号" value="{{value}}" bindinput="inputPhone" name="phone"></input>
     </div>
@@ -10,6 +10,6 @@
       <input placeholder="验证码" name="vfCode"></input>
       <button bindtap="getVfCode">获取验证码</button>
     </div>
+    <button form-type="submit">立即登陆</button>
   </form>
-  <button bindtap="loginIn">立即登陆</button>
 </view>

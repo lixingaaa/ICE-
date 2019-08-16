@@ -10,17 +10,17 @@ let config = {
   getUserInfoByCode: host + '/api/user/member/first',
 
   // 解析加密的用户信息查询会员信息
-  getEncryptionUserInfo: host + '/api/user/member/getUser',
+  getEncryptionUserInfo: host + '/api/user/member/getWeixinUser',
 
 
   // 手机发送验证码
   getVerificationCode: host + '/api/user/member/verificationCode',
 
-  // 创建会员账号
-  setUserMember: host + '/api/user/member',
+  // 手机号注册
+  phoneLogin: host + '/api/user/member/phoneLogin',
 
   // 微信快捷注册
-  wxLogin: host + '/api/user/member/wxLogin',
+  wxLogin: host + '/api/user/member/weixinLogin',
 }
 
 module.exports = config

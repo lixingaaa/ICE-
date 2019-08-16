@@ -1,28 +1,17 @@
 <!--index.wxml-->
 <view class="container">
-  <!-- <view class="page-header">
-    <navigator url="../personal/personal" class="userinfo" hover-class="none" wx:if="{{hasUserInfo}}">
-      <view class="userinfo-name">{{userInfo.nickName}}</view>
-      <image src="{{userInfo.avatarUrl}}" class="userinfo-avatar"></image>
-    </navigator>
-    <button class="getUserInfo" wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo">请登录</button>
-    <scroll-view class="property" scroll-x scroll-with-animation="true">
-      <view wx:for="{{5}}">
-      </view>
-    </scroll-view>
-  </view> -->
   <image class="head_bg" src="../../images/head_bg.jpg"></image>
   <view class="user_info">
     <view class="login" style="padding-top:{{isGT800 ? '200rpx':'160rpx'}}">
-      <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo" class="not_login_in">
-        <text>用户登录</text>
+      <button wx:if="{{userInfo == '' && canIUse}}" open-type="getUserInfo" class="not_login_in" bindgetuserinfo="getUserInfo">
+        <text>授权登录</text>
         <image src="../../images/arrow.png"></image>
       </button>
       <view wx:else class="login_in">
         <view class="userinfo">
-          <view class="user_name">HI , John</view>
+          <view class="user_name">{{userInfo.memberName}}</view>
           <view class="user_head_portrait">
-            <!-- <image ></image> -->
+            <image src="{{userInfo.avatarUrl}}"></image>
           </view>
         </view>
         <scroll-view class="user_fortune_list" scroll-x scroll-with-animation="true">
